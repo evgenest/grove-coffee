@@ -37,7 +37,7 @@ async function initScrollReveal() {
   let animate, stagger;
   try {
     ({ animate, stagger } = await import(
-      "https://cdn.jsdelivr.net/npm/animejs@4.4.1/lib/anime.esm.js"
+      "https://cdn.jsdelivr.net/npm/animejs@4.4.1/dist/modules/index.js"
     ));
   } catch {
     // anime.js CDN unreachable — show all content immediately without animation.
@@ -84,7 +84,7 @@ async function initScrollReveal() {
           opacity:    [0, 1],
           translateY: [distance, 0],
           scale:      [0.985, 1],
-          filter:     ["blur(10px)", "blur(0px)"],
+          filter:     ["blur(6px)", "blur(0px)"],
           duration,
           delay: mode === "children"
             ? stagger(staggerMs, { start: delay })

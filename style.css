@@ -59,7 +59,7 @@ button, input { font: inherit; }
 [data-reveal-ready] [data-reveal][data-reveal-mode="self"] {
   opacity: 0;
   transform: translateY(1.75rem) scale(0.985);
-  filter: blur(10px);
+  filter: blur(6px);
 }
 
 [data-reveal-ready] [data-reveal][data-reveal-state="visible"] [data-reveal-item],
