@@ -17,18 +17,43 @@
  *   data-reveal-duration="800"   → animation duration in ms    (default: 900)
  */
 
-import { animate, stagger } from "https://cdn.jsdelivr.net/npm/animejs@4.4.1/+esm";
+// Signal to CSS that JS is running — starting states (opacity:0) only apply
+// when this attribute is present, so content stays visible if JS is disabled.
+document.documentElement.dataset.revealReady = "true";
 
-function initScrollReveal() {
+function showAll() {
+  document.querySelectorAll("[data-reveal]").forEach((root) => {
+    root.dataset.revealState = "visible";
+    root.querySelectorAll("[data-reveal-item]").forEach((t) => {
+      t.style.opacity   = "1";
+      t.style.transform = "none";
+      t.style.filter    = "none";
+    });
+  });
+}
+
+async function initScrollReveal() {
+  // Dynamic import so we can catch CDN failures gracefully.
+  let animate, stagger;
+  try {
+    ({ animate, stagger } = await import(
+      "https://cdn.jsdelivr.net/npm/animejs@4.4.1/lib/anime.esm.js"
+    ));
+  } catch {
+    // anime.js CDN unreachable — show all content immediately without animation.
+    showAll();
+    return;
+  }
+
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const roots = Array.from(document.querySelectorAll("[data-reveal]"));
 
   roots.forEach((root) => {
-    const mode      = root.dataset.revealMode                      || "children";
-    const delay     = Number(root.dataset.revealDelay)             || 0;
-    const staggerMs = Number(root.dataset.revealStagger)           || 85;
-    const distance  = Number(root.dataset.revealDistance)          || 28;
-    const duration  = Number(root.dataset.revealDuration)          || 900;
+    const mode      = root.dataset.revealMode             || "children";
+    const delay     = Number(root.dataset.revealDelay)    || 0;
+    const staggerMs = Number(root.dataset.revealStagger)  || 85;
+    const distance  = Number(root.dataset.revealDistance) || 28;
+    const duration  = Number(root.dataset.revealDuration) || 900;
 
     const items   = Array.from(root.querySelectorAll("[data-reveal-item]"));
     const targets = mode === "children" && items.length > 0 ? items : [root];
@@ -55,7 +80,6 @@ function initScrollReveal() {
           t.style.willChange = "opacity, transform, filter";
         });
 
-        // anime.js drives the values from the CSS starting state to the final state.
         animation = animate(targets, {
           opacity:    [0, 1],
           translateY: [distance, 0],
@@ -80,18 +104,7 @@ function initScrollReveal() {
     );
 
     observer.observe(root);
-
-    // Cleanup on hot-reload / navigation (not strictly needed for a static page).
-    return () => {
-      animation?.revert();
-      observer.disconnect();
-    };
   });
 }
 
-// Module scripts are deferred — DOM is parsed by the time this runs.
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initScrollReveal);
-} else {
-  initScrollReveal();
-}
+initScrollReveal();

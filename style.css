@@ -51,27 +51,26 @@ button, input { font: inherit; }
 
 /* ── Scroll-reveal starting states ─────────────────────────────────── */
 /*
-  Items start invisible + shifted + blurred.
-  anime.js drives them to opacity:1 / translateY:0 / blur:0.
-  The [data-reveal-state="visible"] rule confirms the end state in CSS
-  (after anime.js inline styles are removed on revert).
+  Starting states only activate when JS has confirmed it's running
+  (scroll-reveal.js sets data-reveal-ready on <html> synchronously).
+  This ensures content is always visible if JS is disabled or fails to load.
 */
-[data-reveal-item],
-[data-reveal][data-reveal-mode="self"] {
+[data-reveal-ready] [data-reveal-item],
+[data-reveal-ready] [data-reveal][data-reveal-mode="self"] {
   opacity: 0;
   transform: translateY(1.75rem) scale(0.985);
   filter: blur(10px);
 }
 
-[data-reveal][data-reveal-state="visible"] [data-reveal-item],
-[data-reveal][data-reveal-state="visible"][data-reveal-mode="self"] {
+[data-reveal-ready] [data-reveal][data-reveal-state="visible"] [data-reveal-item],
+[data-reveal-ready] [data-reveal][data-reveal-state="visible"][data-reveal-mode="self"] {
   opacity: 1;
 }
 
 /* Reduced-motion: skip animation, show content immediately. */
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal-item],
-  [data-reveal][data-reveal-mode="self"] {
+  [data-reveal-ready] [data-reveal-item],
+  [data-reveal-ready] [data-reveal][data-reveal-mode="self"] {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
