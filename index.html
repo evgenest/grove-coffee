@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GROVE — Specialty Coffee Roastery</title>
+  <meta name="description" content="Single-origin specialty coffee, roasted to order and shipped within 48 hours. Traceable beans from Ethiopia, Colombia, and Guatemala." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ──────────────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">GROVE</a>
+      <nav class="nav__links" aria-label="Primary navigation">
+        <a href="#origins">Origins</a>
+        <a href="#process">Process</a>
+        <a href="#blends">Blends</a>
+        <a href="#order" class="nav__cta">Order Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ────────────────────────────────────────────────────────── -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div
+        class="container"
+        data-reveal
+        data-reveal-mode="children"
+        data-reveal-delay="100"
+        data-reveal-stagger="130"
+        data-reveal-distance="22"
+      >
+        <p data-reveal-item class="eyebrow">Specialty Coffee Roastery</p>
+
+        <h1 data-reveal-item class="hero__heading">
+          Coffee worth<br />the journey.
+        </h1>
+
+        <p data-reveal-item class="hero__sub">
+          Single-origin beans sourced from altitude farms,<br />
+          roasted in small batches, shipped within 48 hours.
+        </p>
+
+        <div data-reveal-item class="hero__actions">
+          <a href="#blends" class="btn btn--primary">Explore Our Blends</a>
+          <a href="#story" class="btn btn--ghost">Our Story</a>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ── Brand Story ──────────────────────────────────────────────────── -->
+    <section id="story" class="section">
+      <div class="container container--wide">
+        <div class="story__grid" data-reveal data-reveal-mode="children" data-reveal-stagger="100">
+
+          <div data-reveal-item class="story__quote">
+            <blockquote>
+              "The best cup of coffee is one you know the full story behind."
+            </blockquote>
+          </div>
+
+          <div class="story__text">
+            <p data-reveal-item class="eyebrow">About Grove</p>
+            <p data-reveal-item>
+              Grove was started in 2019 by two coffee obsessives who grew tired of drinking
+              beans that had crossed two continents and sat in a warehouse for six months.
+              When we couldn't find what we wanted, we went to the source ourselves.
+            </p>
+            <p data-reveal-item>
+              Today we work directly with seven farms across three countries. Every lot is
+              tasted, approved, and roasted within weeks of arrival. No middlemen. No mystery.
+              Just coffee that tastes like somewhere real.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Origins ─────────────────────────────────────────────────────── -->
+    <section id="origins" class="section">
+      <div class="container">
+
+        <div class="section-header" data-reveal data-reveal-mode="children">
+          <p data-reveal-item class="eyebrow">Where we source</p>
+          <h2 data-reveal-item class="section-title">Three countries.<br />One standard.</h2>
+        </div>
+
+        <div
+          class="origins-grid"
+          data-reveal
+          data-reveal-mode="children"
+          data-reveal-stagger="130"
+        >
+
+          <article data-reveal-item class="origin-card">
+            <div class="origin-card__flag">🇪🇹</div>
+            <p class="origin-card__region">Ethiopia · Yirgacheffe</p>
+            <h3 class="origin-card__name">The Birthplace</h3>
+            <p class="origin-card__altitude">Altitude: 1,800 – 2,200 m</p>
+            <p class="origin-card__desc">
+              Floral and jasmine-forward, with notes of bergamot, stone fruit, and a clean,
+              lingering sweetness. The region where coffee as we know it was born.
+            </p>
+            <ul class="origin-card__notes">
+              <li>Jasmine</li>
+              <li>Bergamot</li>
+              <li>Peach</li>
+            </ul>
+          </article>
+
+          <article data-reveal-item class="origin-card origin-card--featured">
+            <div class="origin-card__flag">🇨🇴</div>
+            <p class="origin-card__region">Colombia · Huila</p>
+            <h3 class="origin-card__name">The Classic</h3>
+            <p class="origin-card__altitude">Altitude: 1,500 – 2,000 m</p>
+            <p class="origin-card__desc">
+              Rich caramel and dark chocolate base with a bright, apple-like acidity. Balanced
+              and approachable — a crowd favourite for very good reason.
+            </p>
+            <ul class="origin-card__notes">
+              <li>Caramel</li>
+              <li>Dark Chocolate</li>
+              <li>Apple</li>
+            </ul>
+          </article>
+
+          <article data-reveal-item class="origin-card">
+            <div class="origin-card__flag">🇬🇹</div>
+            <p class="origin-card__region">Guatemala · Antigua</p>
+            <h3 class="origin-card__name">The Bold One</h3>
+            <p class="origin-card__altitude">Altitude: 1,500 – 1,700 m</p>
+            <p class="origin-card__desc">
+              Full body with a smoky cocoa backbone and subtle spice. Volcanic soil gives
+              Antigua beans a depth that's difficult to find anywhere else.
+            </p>
+            <ul class="origin-card__notes">
+              <li>Cocoa</li>
+              <li>Smoke</li>
+              <li>Spice</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Process ──────────────────────────────────────────────────────── -->
+    <section id="process" class="section section--process">
+      <div class="container container--wide">
+
+        <div
+          class="section-header section-header--center"
+          data-reveal
+          data-reveal-mode="children"
+        >
+          <p data-reveal-item class="eyebrow">How it works</p>
+          <h2 data-reveal-item class="section-title">From farm to your front door.</h2>
+        </div>
+
+        <div
+          class="process-steps"
+          data-reveal
+          data-reveal-mode="children"
+          data-reveal-stagger="160"
+        >
+          <div data-reveal-item class="process-step">
+            <div class="process-step__number">01</div>
+            <h3 class="process-step__title">Source</h3>
+            <p class="process-step__desc">
+              We visit origin farms every harvest season, cup samples on-site, and buy
+              directly. We know the farmers by name.
+            </p>
+          </div>
+
+          <div class="process-step__divider" aria-hidden="true"></div>
+
+          <div data-reveal-item class="process-step">
+            <div class="process-step__number">02</div>
+            <h3 class="process-step__title">Roast</h3>
+            <p class="process-step__desc">
+              Every batch is roasted fresh at our facility on a 12 kg drum roaster.
+              We pull at peak development — no longer.
+            </p>
+          </div>
+
+          <div class="process-step__divider" aria-hidden="true"></div>
+
+          <div data-reveal-item class="process-step">
+            <div class="process-step__number">03</div>
+            <h3 class="process-step__title">Ship</h3>
+            <p class="process-step__desc">
+              Roasted-to-order bags are sealed, labelled with roast date, and dispatched
+              within 48 hours. Freshness guaranteed.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Signature Blends ─────────────────────────────────────────────── -->
+    <section id="blends" class="section">
+      <div class="container">
+
+        <div class="section-header" data-reveal data-reveal-mode="children">
+          <p data-reveal-item class="eyebrow">Signature Blends</p>
+          <h2 data-reveal-item class="section-title">Find your cup.</h2>
+          <p data-reveal-item class="section-sub">
+            All blends available as whole bean or freshly ground. 250 g and 500 g options.
+          </p>
+        </div>
+
+        <div
+          class="blends-grid"
+          data-reveal
+          data-reveal-mode="children"
+          data-reveal-stagger="140"
+        >
+
+          <article data-reveal-item class="blend-card">
+            <div class="blend-card__bar blend-card__bar--light"></div>
+            <div class="blend-card__body">
+              <p class="blend-card__label">Light Roast</p>
+              <h3 class="blend-card__name">Morning Ritual</h3>
+              <p class="blend-card__origin">Ethiopia Yirgacheffe</p>
+              <p class="blend-card__desc">
+                A gentle wake-up call. Delicate florals and bright citrus that lift you
+                into the day without demanding anything of you.
+              </p>
+              <ul class="blend-card__notes">
+                <li>Jasmine</li>
+                <li>Lemon</li>
+                <li>Honey</li>
+              </ul>
+              <div class="blend-card__footer">
+                <span class="blend-card__price">€14.90 / 250 g</span>
+                <a href="#order" class="btn btn--sm">Add to Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article data-reveal-item class="blend-card blend-card--featured">
+            <div class="blend-card__bar blend-card__bar--medium"></div>
+            <div class="blend-card__body">
+              <p class="blend-card__label">Medium Roast</p>
+              <h3 class="blend-card__name">The Journey</h3>
+              <p class="blend-card__origin">Colombia Huila</p>
+              <p class="blend-card__desc">
+                Our best-seller. Perfectly balanced — enough depth to reward the curious,
+                enough clarity for everyday drinking.
+              </p>
+              <ul class="blend-card__notes">
+                <li>Caramel</li>
+                <li>Apple</li>
+                <li>Dark Chocolate</li>
+              </ul>
+              <div class="blend-card__footer">
+                <span class="blend-card__price">€15.90 / 250 g</span>
+                <a href="#order" class="btn btn--sm btn--gold">Add to Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article data-reveal-item class="blend-card">
+            <div class="blend-card__bar blend-card__bar--dark"></div>
+            <div class="blend-card__body">
+              <p class="blend-card__label">Dark Roast</p>
+              <h3 class="blend-card__name">Ember &amp; Oak</h3>
+              <p class="blend-card__origin">Guatemala Antigua</p>
+              <p class="blend-card__desc">
+                Bold, full-bodied, uncompromising. Built for espresso or a slow french
+                press ritual on a Sunday morning.
+              </p>
+              <ul class="blend-card__notes">
+                <li>Cocoa</li>
+                <li>Smoke</li>
+                <li>Brown Sugar</li>
+              </ul>
+              <div class="blend-card__footer">
+                <span class="blend-card__price">€14.90 / 250 g</span>
+                <a href="#order" class="btn btn--sm">Add to Order</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testimonials ─────────────────────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+
+        <div
+          class="section-header section-header--center"
+          data-reveal
+          data-reveal-mode="children"
+        >
+          <p data-reveal-item class="eyebrow">What people say</p>
+          <h2 data-reveal-item class="section-title">Built on trust,<br />measured in cups.</h2>
+        </div>
+
+        <div
+          class="testimonials-grid"
+          data-reveal
+          data-reveal-mode="children"
+          data-reveal-stagger="130"
+        >
+
+          <blockquote data-reveal-item class="testimonial">
+            <p class="testimonial__text">
+              "The Journey is the first coffee I've had in years where I actually slowed down
+              to taste it. Worth every cent."
+            </p>
+            <footer class="testimonial__author">
+              <strong>Marta Horáčková</strong>
+              <span>Prague, CZ</span>
+            </footer>
+          </blockquote>
+
+          <blockquote data-reveal-item class="testimonial testimonial--featured">
+            <p class="testimonial__text">
+              "I run a small café and switched entirely to Grove for our espresso bar.
+              My customers noticed within the first week."
+            </p>
+            <footer class="testimonial__author">
+              <strong>Liam O'Brien</strong>
+              <span>Dublin, IE</span>
+            </footer>
+          </blockquote>
+
+          <blockquote data-reveal-item class="testimonial">
+            <p class="testimonial__text">
+              "Morning Ritual changed my mornings. It's the kind of coffee that makes you
+              want to wake up a little earlier."
+            </p>
+            <footer class="testimonial__author">
+              <strong>Nina Kowalczyk</strong>
+              <span>Warsaw, PL</span>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA / Order ──────────────────────────────────────────────────── -->
+    <section id="order" class="section section--cta">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <div class="container container--narrow">
+        <div
+          data-reveal
+          data-reveal-mode="children"
+          data-reveal-stagger="110"
+        >
+          <p data-reveal-item class="eyebrow eyebrow--center">Start your ritual</p>
+
+          <h2 data-reveal-item class="section-title section-title--center">
+            Your first bag.<br />Fresh within 48 hours.
+          </h2>
+
+          <p data-reveal-item class="cta__sub">
+            Choose any blend, subscribe and save 15%, or place a one-time order.
+            Free shipping on orders over €40.
+          </p>
+
+          <form
+            data-reveal-item
+            class="cta__form"
+            action="#"
+            method="post"
+            onsubmit="return false"
+          >
+            <div class="cta__form-row">
+              <input
+                type="email"
+                class="cta__input"
+                placeholder="your@email.com"
+                aria-label="Email address"
+                required
+              />
+              <button type="submit" class="btn btn--primary">Get Started</button>
+            </div>
+            <p class="cta__note">No spam. Unsubscribe any time. Your data stays with us.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────────────────── -->
+  <footer
+    class="footer"
+    data-reveal
+    data-reveal-mode="children"
+    data-reveal-stagger="80"
+  >
+    <div class="container container--wide footer__inner">
+      <div data-reveal-item class="footer__brand">
+        <span class="nav__logo">GROVE</span>
+        <p class="footer__tagline">Specialty coffee, roasted to order.</p>
+      </div>
+      <nav data-reveal-item class="footer__nav" aria-label="Footer navigation">
+        <a href="#story">Story</a>
+        <a href="#origins">Origins</a>
+        <a href="#process">Process</a>
+        <a href="#blends">Blends</a>
+      </nav>
+      <div data-reveal-item class="footer__social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Email">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p data-reveal-item>© 2026 Grove Coffee. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="scroll-reveal.js"></script>
+</body>
+</html>
